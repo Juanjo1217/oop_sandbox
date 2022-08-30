@@ -1,4 +1,3 @@
-from unicodedata import category
 from random import randint
 
 class Budgets:
@@ -31,15 +30,17 @@ class User:
     
     
 
-    def add_budget(self, Category:str,
+    def add_budget(self, category:str,
         innitial_balance: float,
         running_balance: float):
         """
         create a budgets category
         """
-        budget = Budgets(category = category,
+        budgets = Budgets(category = category,
                     innitial_balance = innitial_balance)
-        self.budgets.update({category: budget})
+        self.budgets.update({category: budgets})
 
-    def transfer_balance(self, sender: str, raceiver: str, amount: float):
-        self.budgets[sender]
+    def transfer_balance(self, sender: str, receiver: str, amount: float):
+
+        self.budgets[sender].withdraw(amount=amount)
+        self.budgets[receiver].deposit(amount=amount)
