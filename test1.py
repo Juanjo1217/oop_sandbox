@@ -31,8 +31,7 @@ class User:
     
 
     def add_budget(self, category:str,
-        innitial_balance: float,
-        running_balance: float):
+        innitial_balance: float):
         """
         create a budgets category
         """
